@@ -1,11 +1,8 @@
 <template>
     <div class="tags-list-item ">
-        <ul>
-            <li>
-                <img :src="tagsList.src" alt="">
-                <b>{{tagsList.title}}:</b>{{tagsList.content}}
-            </li>
-        </ul>
+                <img :src="tagsList.src" alt="" v-if="tagsList.src">
+                <span v-else="!tagsList.src">{{tagsList.title}}:</span>
+                <span>{{tagsList.content}}</span>
     </div>
 </template>
 
@@ -19,10 +16,11 @@
 </script>
 
 <style scoped>
-ul li{
-    /*display: flex;
-    justify-content: flex-start;*/
-    /*margin-bottom: 10px;*/
-
+.tags-list-item{
+    padding-top: 15px;
 }
+ img{
+    vertical-align: middle;
+}
+
 </style>

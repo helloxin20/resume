@@ -17,13 +17,13 @@
 
 <style scoped>
     @media (max-width: 767px) {
-        .tags {
+        /*.tags {
             text-align: center;
-        }
+        }*/
     }
     @media(min-width: 768px) {
-        .tags{
+       /* .tags{
             margin-top: 45px;
-        }
+        }*/
     }
 </style>

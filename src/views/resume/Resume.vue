@@ -1,8 +1,11 @@
 <template>
-    <div class="resume">
-            <personal :user="user"></personal>
-            <info-list :list="ability" :title="ablityTitle"></info-list>
-
+    <div class="resume container">
+        <personal :user="user"></personal>
+        <main-info :ability="ability"
+                   :design="design"
+                   :experience="experience"
+                   :selfAssessment="selfAssessment">
+        </main-info>
     </div>
 
 </template>
@@ -10,24 +13,23 @@
 <script>
     import Personal from "./childComps/Personal";
     import InfoList from "@/components/content/info/InfoList";
+    import MainInfo from "./childComps/MainInfo";
 
     import user from "@/database/personal";
     import ability from "@/database/ability";
     import experience from "@/database/experience";
     import selfAssessment from  "@/database/self-assessment";
+    import design from "@/database/icon"
     export default {
         name: "Resume",
-        components: {InfoList, Personal},
+        components: {MainInfo, InfoList, Personal},
         data(){
             return {
                 user,
                 ability,
                 experience,
                 selfAssessment,
-                ablityTitle:['能力','Ability'],
-                designTitle:'设计集',
-                experienceTitle:'工作经历',
-                selfAssessmentTitle:'个人评估',
+                design,
             }
         }
     }
