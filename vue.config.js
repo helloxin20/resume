@@ -6,5 +6,8 @@ module.exports = {
                 'database':'@/database',
             }
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/resume'
+        : '/'
 };
